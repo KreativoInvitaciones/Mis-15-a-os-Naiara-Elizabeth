@@ -1,0 +1,34 @@
+INVITACIÓN DIGITAL · NAIARA ELIZABETH · KREATIVO
+
+Archivos del proyecto:
+  index.html                Página e información del evento
+  style.css                 Diseño adaptable a celular/computadora
+  script.js                 Apertura, música, cuenta regresiva, WhatsApp
+  foto-naiara.jpg           Fotografía enviada
+  Papel_Chic_mp3.mp3        Música enviada
+
+PASOS PARA ACTUALIZAR GITHUB
+1. Descomprime el ZIP.
+2. Abre el repositorio de la invitación de Naiara en GitHub.
+3. En Add file > Upload files, sube LOS CINCO ARCHIVOS listados arriba
+   en el nivel principal del repositorio. Reemplaza los archivos que
+   ya existan. No subas el ZIP como archivo de la página.
+4. Presiona Commit changes.
+5. Abre o actualiza la dirección de GitHub Pages de ese repositorio.
+
+CAMBIOS INCLUIDOS
+- Portada nueva sin sobre ni solapa blanca, botón elegante azul.
+- Paleta azul cielo, azul profundo y detalles plateados.
+- Fotografía de la quinceañera en portada y sección especial.
+- Música de fondo con control de pausa/reproducción. En celulares,
+  empieza después de pulsar 'Abrir mi invitación' (restricción del navegador).
+- Horarios de misa 1:00 p. m. y recepción 3:00 p. m.
+- Cuenta regresiva y confirmación por WhatsApp al 469 141 9101.
+
+FECHA DEL EVENTO CONFIRMADA:
+Sábado 26 de diciembre de 2026.
+
+La confirmación no guarda respuestas en base de datos. Abre WhatsApp con
+un texto prellenado y el invitado debe enviarlo.
+No se agregaron enlaces de Google Maps porque no se confirmó la ciudad
+para ubicar los lugares con seguridad.
