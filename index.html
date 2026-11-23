@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261122g">
-  <script src="script.js?v=20261122g" defer></script>
+  <link rel="stylesheet" href="style.css?v=20261122h">
+  <script src="script.js?v=20261122h" defer></script>
 </head>
 <body class="is-locked">
   <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -178,7 +178,22 @@
           <label for="guestName">Tu nombre</label>
           <input id="guestName" name="guestName" type="text" autocomplete="name" maxlength="90" placeholder="Nombre y apellido" required>
           <fieldset class="attendance-options"><legend>¿Nos acompañarás?</legend><label class="radio-pill"><input name="attendance" type="radio" value="Sí asistiré" checked><span>Sí asistiré</span></label><label class="radio-pill"><input name="attendance" type="radio" value="No podré asistir"><span>No podré asistir</span></label></fieldset>
-          <div id="guestsWrap"><label for="guestCount">Personas que asistirán (incluyéndote)</label><select id="guestCount" name="guestCount"><option value="1">1 persona</option><option value="2">2 personas</option><option value="3">3 personas</option><option value="4">4 personas</option><option value="5">5 personas</option><option value="6">6 personas</option><option value="7">7 personas</option><option value="8">8 personas</option><option value="9">9 personas</option><option value="10">10 personas</option></select></div>
+          <div id="guestsWrap" class="guest-breakdown">
+            <p class="guest-breakdown-heading">¿Cuántas personas asistirán?</p>
+            <p class="guest-breakdown-hint">Inclúyete en el grupo que te corresponda.</p>
+            <div class="guest-count-grid">
+              <div class="guest-count-field">
+                <label for="adultCount">Adultos</label>
+                <input id="adultCount" name="adultCount" type="number" inputmode="numeric" pattern="[0-9]*" min="0" max="99" step="1" value="1" required aria-describedby="guestCountNote">
+              </div>
+              <div class="guest-count-field">
+                <label for="childCount">Niños</label>
+                <input id="childCount" name="childCount" type="number" inputmode="numeric" pattern="[0-9]*" min="0" max="99" step="1" value="0" required aria-describedby="guestCountNote">
+              </div>
+            </div>
+            <p id="guestCountNote" class="guest-total" aria-live="polite">Total: <strong id="guestTotal">1 persona</strong></p>
+            <p id="guestCountError" class="guest-count-error" role="alert" hidden>Indica al menos una persona para confirmar.</p>
+          </div>
           <button class="rsvp-button" type="submit" aria-label="Enviar mi respuesta de asistencia por WhatsApp">
             <span class="rsvp-button-icon" aria-hidden="true">
               <svg viewBox="0 0 32 32"><path d="M4 9.5h24v16H4z"/><path d="m4.5 10.5 11.5 9 11.5-9"/><path d="m4.5 24.5 8.5-7.3m14.5 7.3-8.5-7.3"/></svg>

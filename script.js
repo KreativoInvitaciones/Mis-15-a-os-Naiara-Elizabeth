@@ -94,22 +94,72 @@ if ('IntersectionObserver' in window && !prefersReducedMotion) {
 const rsvpForm = document.getElementById('rsvpForm');
 const guestsWrap = document.getElementById('guestsWrap');
 const attendanceRadios = document.querySelectorAll('input[name="attendance"]');
-function updateGuests() {
-  const yes = document.querySelector('input[name="attendance"]:checked').value === 'Sí asistiré';
-  guestsWrap.hidden = !yes;
+const adultCount = document.getElementById('adultCount');
+const childCount = document.getElementById('childCount');
+const guestTotal = document.getElementById('guestTotal');
+const guestCountError = document.getElementById('guestCountError');
+
+function getGuestCounts() {
+  return {
+    adults: adultCount.valueAsNumber,
+    children: childCount.valueAsNumber,
+  };
 }
+
+function hasValidCounts() {
+  const { adults, children } = getGuestCounts();
+  return Number.isInteger(adults) && Number.isInteger(children) &&
+    adults >= 0 && children >= 0 && adults <= 99 && children <= 99 &&
+    adults + children > 0;
+}
+
+function updateGuestSummary() {
+  const { adults, children } = getGuestCounts();
+  const total = Number.isFinite(adults) && Number.isFinite(children)
+    ? adults + children : 0;
+  guestTotal.textContent = `${total} persona${total === 1 ? '' : 's'}`;
+  guestCountError.hidden = true;
+}
+
+function updateGuests() {
+  const attending = document.querySelector('input[name="attendance"]:checked').value === 'Sí asistiré';
+  guestsWrap.hidden = !attending;
+  // Los números no se validan cuando el invitado rechaza la invitación.
+  adultCount.disabled = !attending;
+  childCount.disabled = !attending;
+  if (attending) updateGuestSummary();
+}
+
 attendanceRadios.forEach(radio => radio.addEventListener('change', updateGuests));
+adultCount.addEventListener('input', updateGuestSummary);
+childCount.addEventListener('input', updateGuestSummary);
+updateGuestSummary();
 updateGuests();
+
 rsvpForm.addEventListener('submit', event => {
   event.preventDefault();
   if (!rsvpForm.reportValidity()) return;
   const name = document.getElementById('guestName').value.trim();
   if (!name) return;
   const attendance = document.querySelector('input[name="attendance"]:checked').value;
-  const number = document.getElementById('guestCount').value;
-  const message = attendance === 'Sí asistiré'
-    ? `Hola, soy ${name}. Confirmo mi asistencia a los XV años de Naiara Elizabeth el ${EVENT.readable}. Asistiremos ${number} persona${number === '1' ? '' : 's'}. ¡Muchas gracias por la invitación!`
-    : `Hola, soy ${name}. Muchas gracias por la invitación a los XV años de Naiara Elizabeth. Lamentablemente no podré asistir. ¡Les deseo una celebración preciosa!`;
+  let message;
+
+  if (attendance === 'Sí asistiré') {
+    if (!hasValidCounts()) {
+      guestCountError.hidden = false;
+      adultCount.focus();
+      return;
+    }
+    const { adults, children } = getGuestCounts();
+    const total = adults + children;
+    message = `Hola, soy ${name}. Confirmo mi asistencia a los XV años de Naiara Elizabeth el ${EVENT.readable}. ` +
+      `Asistiremos ${total} persona${total === 1 ? '' : 's'}: ` +
+      `${adults} adulto${adults === 1 ? '' : 's'} y ${children} niño${children === 1 ? '' : 's'}. ` +
+      `¡Muchas gracias por la invitación!`;
+  } else {
+    message = `Hola, soy ${name}. Muchas gracias por la invitación a los XV años de Naiara Elizabeth. ` +
+      `Lamentablemente no podré asistir. ¡Les deseo una celebración preciosa!`;
+  }
   const url = `https://wa.me/524691429101?text=${encodeURIComponent(message)}`;
   window.open(url, '_blank', 'noopener,noreferrer');
 });

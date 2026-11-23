@@ -656,3 +656,29 @@ body { font-size:16px; }
   .seal-sparkle { animation:none; opacity:.36; }
   .opening.magic-opening .seal-sparkle,.opening.magic-opening .seal-aura { animation:none; }
 }
+
+/* Confirmación para banquete: distingue adultos y niños. */
+.guest-breakdown { margin:0 0 27px; }
+.guest-breakdown-heading { margin:0 0 4px; font:600 16px/1.35 var(--sans); color:#193e61; }
+.guest-breakdown-hint { margin:0 0 17px; font:400 13px/1.5 var(--sans); color:#57728a; }
+.guest-count-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+.guest-count-field { min-width:0; }
+.rsvp-form .guest-count-field label { margin-bottom:8px; font-size:14px; }
+.rsvp-form .guest-count-field input[type=number] {
+  box-sizing:border-box; display:block; width:100%; min-width:0;
+  padding:14px 12px; border:1px solid #b5cedf; border-radius:10px;
+  background:#fff; color:var(--navy); font:500 17px/1.4 var(--sans);
+  -moz-appearance:textfield;
+}
+.rsvp-form .guest-count-field input[type=number]::-webkit-inner-spin-button,
+.rsvp-form .guest-count-field input[type=number]::-webkit-outer-spin-button { -webkit-appearance:none; margin:0; }
+.rsvp-form .guest-count-field input[type=number]:focus-visible { outline:3px solid #6aa7d1; outline-offset:2px; }
+.guest-total { margin:13px 0 0; padding:10px 13px; border-radius:9px;
+  background:#eaf2f8; color:#335d7f; font:500 13px/1.4 var(--sans); }
+.guest-total strong { color:#173e60; font-weight:700; }
+.guest-count-error { margin:9px 0 0; color:#a52837; font:600 13px/1.4 var(--sans); }
+.guest-count-error[hidden], #guestsWrap[hidden] { display:none!important; }
+@media(max-width:359px) {
+  .guest-count-grid { gap:10px; }
+  .guest-breakdown-heading { font-size:15px; }
+}
