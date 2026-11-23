@@ -43,19 +43,36 @@ musicToggle.addEventListener('click', () => {
 });
 reflectMusicState();
 
+// Cuenta regresiva real: 26 de diciembre de 2026, 13:00 (hora de Pénjamo / centro de México).
+const EVENT_START_MS = Date.parse('2026-12-26T13:00:00-06:00');
+const EVENT_DAY_START_MS = Date.parse('2026-12-26T00:00:00-06:00');
+const EVENT_DAY_END_MS = Date.parse('2026-12-27T00:00:00-06:00');
+const timerValues = {
+  days: document.getElementById('daysLeft'),
+  hours: document.getElementById('hoursLeft'),
+  minutes: document.getElementById('minutesLeft'),
+  seconds: document.getElementById('secondsLeft'),
+};
+const countdownLabel = document.getElementById('countdownLabel');
 function updateCountdown() {
-  // Cuenta regresiva por DÍAS de calendario en el centro de México.
-  const parts = new Intl.DateTimeFormat('en-CA', {
-    timeZone: 'America/Mexico_City', year: 'numeric', month: '2-digit', day: '2-digit'
-  }).formatToParts(new Date());
-  const f = Object.fromEntries(parts.map(x => [x.type, x.value]));
-  const today = Date.UTC(Number(f.year), Number(f.month) - 1, Number(f.day));
-  const event = Date.UTC(EVENT.year, EVENT.month - 1, EVENT.day);
-  const days = Math.round((event - today) / 86400000);
-  document.getElementById('daysLeft').textContent = Math.max(0, days).toLocaleString('es-MX');
-  document.getElementById('countdownLabel').textContent = days > 1 ? 'DÍAS PARA CELEBRAR' : days === 1 ? 'DÍA PARA CELEBRAR' : days === 0 ? '¡HOY ES EL GRAN DÍA!' : 'GRACIAS POR COMPARTIR ESTE DÍA';
+  const now = Date.now();
+  const diff = Math.max(0, EVENT_START_MS - now);
+  const wholeSeconds = Math.floor(diff / 1000);
+  const days = Math.floor(wholeSeconds / 86400);
+  const hours = Math.floor((wholeSeconds % 86400) / 3600);
+  const minutes = Math.floor((wholeSeconds % 3600) / 60);
+  const seconds = wholeSeconds % 60;
+  timerValues.days.textContent = String(days);
+  timerValues.hours.textContent = String(hours).padStart(2, '0');
+  timerValues.minutes.textContent = String(minutes).padStart(2, '0');
+  timerValues.seconds.textContent = String(seconds).padStart(2, '0');
+  if (now >= EVENT_START_MS && now < EVENT_DAY_END_MS) countdownLabel.textContent = '¡Hoy celebramos los XV años de Naiara!';
+  else if (now >= EVENT_DAY_END_MS) countdownLabel.textContent = 'Gracias por ser parte de este día especial';
+  else if (now >= EVENT_DAY_START_MS) countdownLabel.textContent = '¡Hoy es el gran día!';
+  else countdownLabel.textContent = 'Faltan para comenzar la ceremonia';
 }
 updateCountdown();
+window.setInterval(updateCountdown, 1000);
 
 const revealElements = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window && !prefersReducedMotion) {

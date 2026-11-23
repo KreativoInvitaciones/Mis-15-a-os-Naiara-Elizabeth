@@ -8,9 +8,9 @@
   <title>Naiara Elizabeth | Mis XV años</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20261122b">
+  <script src="script.js?v=20261122b" defer></script>
 </head>
 <body class="is-locked">
   <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -99,15 +99,30 @@
       <div class="date-border reveal">
         <p>SÁBADO</p><strong>26</strong><span>DICIEMBRE</span><small>2026</small>
       </div>
-      <div class="countdown reveal" id="countdown"><strong id="daysLeft">—</strong><span id="countdownLabel">DÍAS PARA CELEBRAR</span></div>
+      <div class="countdown reveal" id="countdown" role="timer" aria-label="Cuenta regresiva para el 26 de diciembre de 2026 a la una de la tarde">
+        <div class="countdown-unit"><strong id="daysLeft">--</strong><span>DÍAS</span></div>
+        <div class="countdown-unit"><strong id="hoursLeft">--</strong><span>HORAS</span></div>
+        <div class="countdown-unit"><strong id="minutesLeft">--</strong><span>MINUTOS</span></div>
+        <div class="countdown-unit"><strong id="secondsLeft">--</strong><span>SEGUNDOS</span></div>
+      </div>
+      <p class="countdown-note" id="countdownLabel" aria-live="polite">Faltan para comenzar la ceremonia</p>
     </section>
 
     <section class="events section-pad" id="detalles" aria-labelledby="events-title">
       <p class="overline reveal">ACOMPÁÑAME EN ESTE GRAN DÍA</p>
       <h2 id="events-title" class="section-heading reveal">Nuestra <em>celebración</em></h2>
       <div class="event-grid">
-        <article class="event-card reveal"><span class="event-number">01 / CEREMONIA</span><span class="event-icon" aria-hidden="true">✟</span><h3>Ceremonia religiosa</h3><div class="event-rule"></div><p class="event-time">1:00 p. m.</p><p class="event-location">Templo de San Francisco</p></article>
-        <article class="event-card reveal"><span class="event-number">02 / RECEPCIÓN</span><span class="event-icon" aria-hidden="true">✧</span><h3>Recepción</h3><div class="event-rule"></div><p class="event-time">3:00 p. m.</p><p class="event-location">Salón Morelos</p><p class="event-address">Calle Morelos núm. 2<br>Antigua Casa de Cultura</p></article>
+        <article class="event-card reveal"><span class="event-number">01 / CEREMONIA</span><span class="event-icon" aria-hidden="true">✟</span><h3>Ceremonia religiosa</h3><div class="event-rule"></div><p class="event-time">1:00 p. m.</p><p class="event-location">Templo de San Francisco</p>
+          <p class="event-address">Zona Centro, Pénjamo, Gto.</p>
+          <a class="location-button" href="https://www.google.com/maps/dir/?api=1&amp;destination=20.4306751%2C-101.7234657" target="_blank" rel="noopener noreferrer" aria-label="Abrir Google Maps para llegar al Templo de San Francisco">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.7"/></svg>
+            Cómo llegar
+          </a></article>
+        <article class="event-card reveal"><span class="event-number">02 / RECEPCIÓN</span><span class="event-icon" aria-hidden="true">✧</span><h3>Recepción</h3><div class="event-rule"></div><p class="event-time">3:00 p. m.</p><p class="event-location">Salón Morelos</p><p class="event-address">Calle Morelos núm. 2<br>Antigua Casa de Cultura, Pénjamo, Gto.</p>
+          <a class="location-button" href="https://www.google.com/maps/dir/?api=1&amp;destination=20.4297111%2C-101.7272563" target="_blank" rel="noopener noreferrer" aria-label="Abrir Google Maps para llegar al Salón Morelos, Calle Morelos número 2">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.7"/></svg>
+            Cómo llegar
+          </a></article>
       </div>
     </section>
 
@@ -126,15 +141,19 @@
       <div class="rsvp-inner">
         <span class="rsvp-sparkle" aria-hidden="true">✧</span>
         <p class="overline reveal">NOS ENCANTARÁ VERTE</p><h2 id="rsvp-title" class="section-heading reveal">Confirma tu <em>asistencia</em></h2>
-        <p class="rsvp-copy reveal">Completa estos datos para preparar tu respuesta por WhatsApp.</p>
+        <p class="rsvp-copy reveal">Confirma directamente con la familia. Tu mensaje se enviará al WhatsApp del papá de Naiara.</p>
         <form id="rsvpForm" class="rsvp-form reveal">
           <label for="guestName">Tu nombre</label>
           <input id="guestName" name="guestName" type="text" autocomplete="name" maxlength="90" placeholder="Nombre y apellido" required>
           <fieldset class="attendance-options"><legend>¿Nos acompañarás?</legend><label class="radio-pill"><input name="attendance" type="radio" value="Sí asistiré" checked><span>Sí asistiré</span></label><label class="radio-pill"><input name="attendance" type="radio" value="No podré asistir"><span>No podré asistir</span></label></fieldset>
           <div id="guestsWrap"><label for="guestCount">Personas que asistirán (incluyéndote)</label><select id="guestCount" name="guestCount"><option value="1">1 persona</option><option value="2">2 personas</option><option value="3">3 personas</option><option value="4">4 personas</option><option value="5">5 personas</option><option value="6">6 personas</option><option value="7">7 personas</option><option value="8">8 personas</option><option value="9">9 personas</option><option value="10">10 personas</option></select></div>
-          <button class="rsvp-button" type="submit">Enviar confirmación por WhatsApp <span aria-hidden="true">↗</span></button>
+          <button class="rsvp-button" type="submit" aria-label="Preparar confirmación por WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.7a8.7 8.7 0 0 1-12.8 7.6L3 21l1.8-5.1A8.7 8.7 0 1 1 21 11.7Z"/><path d="M8.3 8.1c.3-.4.6-.5 1-.1l1.3 1.5c.2.3.2.5-.1.9l-.5.6a9 9 0 0 0 3.2 3.1l.6-.6c.3-.2.6-.3.9-.1l1.5 1c.4.3.3.7 0 1.1-.6.7-1.3.9-2.2.6a10.2 10.2 0 0 1-6.5-6.2c-.3-.8.1-1.6.8-1.8Z"/></svg>
+            <span>Confirmar por WhatsApp</span>
+            <span class="button-arrow" aria-hidden="true">↗</span>
+          </button>
         </form>
-        <p class="rsvp-note">Se abrirá WhatsApp con tu respuesta lista para enviar. Debes presionar “Enviar”.</p>
+        <p class="rsvp-note">Al tocar el botón se abrirá WhatsApp. Revisa tu mensaje y pulsa «Enviar» para completar la confirmación.</p>
       </div>
     </section>
   </main>

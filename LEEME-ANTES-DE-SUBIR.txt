@@ -1,0 +1,38 @@
+INVITACIÓN DE NAIARA ELIZABETH | VERSIÓN MÓVIL ACTUALIZADA
+Fecha: sábado 26 de diciembre de 2026.
+
+Esta es la actualización COMPLETA del sitio, no un parche.
+
+CAMBIOS:
+• Portada rediseñada pensando primero en teléfono: foto grande, sin marcos superpuestos ni espacios sobrantes.
+• Tipografía Playfair Display + DM Sans para mejorar lectura; títulos y textos más legibles.
+• Cuenta regresiva dinámica con días, horas, minutos y segundos, hasta la misa del 26/12/2026 a la 1:00 pm (horario del centro de México).
+• Botón de WhatsApp rediseñado; usa el 469 141 9101 que proporcionaste para el papá.
+• Botones Cómo llegar en misa (Templo de San Francisco, 1:00 pm) y recepción (Salón Morelos, 3:00 pm).
+• Música Papel_Chic_mp3.mp3, foto y secciones conservadas.
+
+SUBIR A GITHUB:
+1. Descarga este archivo ZIP y DESCOMPRÍMELO.
+2. Entra al repositorio de GitHub de la invitación.
+3. Code > Add file > Upload files.
+4. Sube los archivos index.html, style.css, script.js, foto-naiara.jpg, Papel_Chic_mp3.mp3.
+   Selecciona los archivos que están DENTRO de la carpeta, no la carpeta ni el ZIP.
+5. Commit changes, directamente a main.
+6. Recarga GitHub Pages en el celular. Si sigue la versión antigua, vuelve a cargar el sitio.
+
+UBICACIONES COMPARTIDAS POR EL CLIENTE:
+Templo de San Francisco (misa, 1:00 p. m.):
+https://maps.app.goo.gl/bncoLGifS4Rhchhn6
+Salón Morelos / Morelos 2 (recepción, 3:00 p. m.):
+https://maps.app.goo.gl/cum11J3Ze44BaW4g9
+Los botones «Cómo llegar» abren una ruta hacia las coordenadas
+correspondientes a estos enlaces compartidos desde Google Maps.
+Para la recepción, Google Maps muestra el punto Morelos 2; se recomienda
+comprobar que corresponde al acceso correcto del salón.
+
+CONFIRMACIÓN:
+El formulario abre WhatsApp con el mensaje preparado; el invitado debe tocar
+«Enviar» dentro de WhatsApp para que la familia lo reciba. No existe base
+de datos de confirmaciones dentro de GitHub Pages.
+
+NO SUBIR ESTE TXT.
