@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261122b">
-  <script src="script.js?v=20261122b" defer></script>
+  <link rel="stylesheet" href="style.css?v=20261122c">
+  <script src="script.js?v=20261122c" defer></script>
 </head>
 <body class="is-locked">
   <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -22,33 +22,25 @@
     <symbol id="crown" viewBox="0 0 100 72"><path d="M10 54 3 18l25 19L49 7l21 30 27-19-8 36H10ZM14 63h71" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 18a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM49 7a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM97 18a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" fill="currentColor"/></symbol>
   </svg>
 
-  <!-- NUEVA APERTURA: sin sobre ni papel blanco -->
+  <!-- Portada para celular: nombre protagonista y sello de lacre interactivo. -->
   <div class="opening" id="opening" role="dialog" aria-modal="true" aria-labelledby="opening-title">
     <div class="opening-glow" aria-hidden="true"></div>
     <div class="opening-card">
+      <svg class="opening-branch opening-branch-left" aria-hidden="true"><use href="#floral" /></svg>
+      <svg class="opening-branch opening-branch-right" aria-hidden="true"><use href="#floral" /></svg>
       <div class="opening-copy">
         <span class="opening-kicker">UNA CELEBRACIÓN INOLVIDABLE</span>
-        <svg class="cover-crown" aria-hidden="true"><use href="#crown" /></svg>
-        <span class="opening-xv">Mis XV años</span>
+        <span class="opening-sparkle" aria-hidden="true">✧</span>
+        <span class="opening-xv">Mis quince años</span>
         <h1 id="opening-title" class="opening-name">Naiara <em>Elizabeth</em></h1>
         <div class="ornament-divider" aria-hidden="true"><span></span><svg><use href="#star"/></svg><span></span></div>
-        <p class="opening-date">26 de diciembre de 2026</p>
-        <button type="button" id="openInvitation" class="invitation-button">
-          <span>ABRIR MI INVITACIÓN</span>
-          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p class="opening-date">Sábado 26 de diciembre de 2026</p>
+        <button type="button" id="openInvitation" class="wax-seal-button" aria-label="Abrir la invitación de Naiara Elizabeth">
+          <span class="seal-inner" aria-hidden="true"><span class="seal-monogram">NE</span><span class="seal-star">✦</span></span>
         </button>
-        <p class="opening-caption">Acompáñame a vivir un día lleno de sueños</p>
-      </div>
-      <div class="opening-photo-wrap">
-        <div class="opening-photo-frame">
-          <img src="foto-naiara.jpg" alt="Naiara Elizabeth con su vestido azul de quince años" fetchpriority="high">
-        </div>
-        <span class="frame-botanical frame-botanical-a" aria-hidden="true"><svg><use href="#floral" /></svg></span>
-        <span class="frame-botanical frame-botanical-b" aria-hidden="true"><svg><use href="#floral" /></svg></span>
+        <p class="seal-hint">TOCA EL SELLO PARA ABRIR</p>
       </div>
     </div>
-    <div class="opening-corner opening-corner-a" aria-hidden="true"></div>
-    <div class="opening-corner opening-corner-b" aria-hidden="true"></div>
   </div>
 
   <audio id="backgroundMusic" src="Papel_Chic_mp3.mp3" preload="none" loop></audio>
@@ -76,12 +68,16 @@
     </section>
 
     <section id="mi-foto" class="photo-section section-pad" aria-labelledby="photo-title">
+      <svg class="section-botanical section-botanical-left" aria-hidden="true"><use href="#floral" /></svg>
+      <svg class="section-botanical section-botanical-right" aria-hidden="true"><use href="#floral" /></svg>
       <div class="photo-intro reveal"><span class="overline">UN SUEÑO HECHO REALIDAD</span><h2 id="photo-title" class="section-heading">Un día para <em>brillar</em></h2></div>
       <div class="portrait-frame reveal"><img src="foto-naiara.jpg" loading="lazy" alt="Fotografía de cuerpo completo de Naiara Elizabeth con su vestido azul, corona y ramo" /></div>
       <p class="photo-footnote reveal">Naiara Elizabeth · Mis XV años</p>
     </section>
 
     <section id="historia" class="intro section-pad" aria-labelledby="intro-title">
+      <svg class="section-botanical section-botanical-left" aria-hidden="true"><use href="#floral" /></svg>
+      <svg class="section-botanical section-botanical-right" aria-hidden="true"><use href="#floral" /></svg>
       <div class="tiny-star" aria-hidden="true">✧</div>
       <p class="overline reveal">DE CORAZÓN</p>
       <h2 id="intro-title" class="section-heading reveal">Hay momentos que se convierten<br>en <em>recuerdos para siempre.</em></h2>
@@ -94,6 +90,8 @@
     </section>
 
     <section class="date-section section-pad" aria-labelledby="date-title">
+      <svg class="section-botanical section-botanical-left" aria-hidden="true"><use href="#floral" /></svg>
+      <svg class="section-botanical section-botanical-right" aria-hidden="true"><use href="#floral" /></svg>
       <p class="overline reveal">RESERVA ESTA FECHA</p>
       <h2 id="date-title" class="section-heading reveal">Un día <em>especial</em></h2>
       <div class="date-border reveal">
@@ -109,6 +107,8 @@
     </section>
 
     <section class="events section-pad" id="detalles" aria-labelledby="events-title">
+      <svg class="section-botanical section-botanical-left" aria-hidden="true"><use href="#floral" /></svg>
+      <svg class="section-botanical section-botanical-right" aria-hidden="true"><use href="#floral" /></svg>
       <p class="overline reveal">ACOMPÁÑAME EN ESTE GRAN DÍA</p>
       <h2 id="events-title" class="section-heading reveal">Nuestra <em>celebración</em></h2>
       <div class="event-grid">
@@ -127,17 +127,23 @@
     </section>
 
     <section class="details-band section-pad" aria-label="Detalles de la celebración">
+      <svg class="section-botanical section-botanical-left" aria-hidden="true"><use href="#floral" /></svg>
+      <svg class="section-botanical section-botanical-right" aria-hidden="true"><use href="#floral" /></svg>
       <article class="detail-block reveal"><span class="detail-symbol" aria-hidden="true">✦</span><p class="overline">PARA LA OCASIÓN</p><h2>Código de <em>vestimenta</em></h2><p class="detail-title">Elegante</p><p class="detail-copy">El color azul está reservado exclusivamente para la quinceañera.</p></article>
       <div class="details-separator" aria-hidden="true"></div>
       <article class="detail-block reveal"><span class="detail-symbol" aria-hidden="true">♡</span><p class="overline">UN DETALLE DE CARIÑO</p><h2>Mesa de <em>regalos</em></h2><p class="detail-title">Lluvia de sobres</p><p class="detail-copy">Tu presencia es el mejor regalo. Todos los obsequios son bien recibidos y habrá una cajita especial para quienes deseen participar en la lluvia de sobres.</p></article>
     </section>
 
     <section class="recognition section-pad" aria-labelledby="recognition-title">
+      <svg class="section-botanical section-botanical-left" aria-hidden="true"><use href="#floral" /></svg>
+      <svg class="section-botanical section-botanical-right" aria-hidden="true"><use href="#floral" /></svg>
       <p class="overline reveal">CON GRATITUD</p><h2 id="recognition-title" class="section-heading reveal">Un agradecimiento <em>especial</em></h2>
       <div class="recognition-card reveal"><span class="recognition-star" aria-hidden="true">✧</span><p class="recognition-quote">“Todo cuento de hadas tiene personas especiales que ayudan a convertir los sueños en realidad”.</p><p class="recognition-copy">Con mucho cariño agradecemos a quien ha hecho posible que Naiara lleve el vestido de sus sueños.</p><span class="overline">PADRINO DE VESTIDO</span><h3>Efraín Jalil<br>Zavala Ortiz</h3></div>
     </section>
 
     <section class="rsvp section-pad" id="confirmacion" aria-labelledby="rsvp-title">
+      <svg class="section-botanical section-botanical-left" aria-hidden="true"><use href="#floral" /></svg>
+      <svg class="section-botanical section-botanical-right" aria-hidden="true"><use href="#floral" /></svg>
       <div class="rsvp-inner">
         <span class="rsvp-sparkle" aria-hidden="true">✧</span>
         <p class="overline reveal">NOS ENCANTARÁ VERTE</p><h2 id="rsvp-title" class="section-heading reveal">Confirma tu <em>asistencia</em></h2>
@@ -158,6 +164,6 @@
     </section>
   </main>
 
-  <footer class="footer"><p class="overline">GRACIAS POR SER PARTE DE MI HISTORIA</p><p class="footer-name">Naiara <em>Elizabeth</em></p><p class="footer-date">26 · 12 · 2026</p><p class="footer-credit">Kreativo Invitaciones</p></footer>
+  <footer class="footer"><svg class="section-botanical section-botanical-left" aria-hidden="true"><use href="#floral" /></svg><svg class="section-botanical section-botanical-right" aria-hidden="true"><use href="#floral" /></svg><p class="overline">GRACIAS POR SER PARTE DE MI HISTORIA</p><p class="footer-name">Naiara <em>Elizabeth</em></p><p class="footer-date">26 · 12 · 2026</p><p class="footer-credit">Kreativo Invitaciones</p></footer>
 </body>
 </html>

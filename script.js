@@ -101,6 +101,6 @@ rsvpForm.addEventListener('submit', event => {
   const message = attendance === 'Sí asistiré'
     ? `Hola, soy ${name}. Confirmo mi asistencia a los XV años de Naiara Elizabeth el ${EVENT.readable}. Asistiremos ${number} persona${number === '1' ? '' : 's'}. ¡Muchas gracias por la invitación!`
     : `Hola, soy ${name}. Muchas gracias por la invitación a los XV años de Naiara Elizabeth. Lamentablemente no podré asistir. ¡Les deseo una celebración preciosa!`;
-  const url = `https://wa.me/524691419101?text=${encodeURIComponent(message)}`;
+  const url = `https://wa.me/524691429101?text=${encodeURIComponent(message)}`;
   window.open(url, '_blank', 'noopener,noreferrer');
 });
