@@ -610,3 +610,49 @@ body { font-size:16px; }
   .fairytale-slipper { width:230px; }
   .fairytale-carriage { max-width:255px; }
 }
+
+
+/* ===== Decoración aprobada (recortes exactos, sin reinterpretaciones) ===== */
+.fairytale-decoration img { display:block; width:100%; height:auto; object-fit:contain; }
+.fairytale-slipper { width:min(490px,100%); max-width:none; margin:-20px auto -6px; filter:none; }
+.fairytale-carriage { max-width:660px; width:min(100%,680px); margin:-12px auto 0; filter:none; }
+.footer { background:linear-gradient(180deg,#103b78 0%,#1a4b85 24%,#a7cbe5 45%,#e3f0f8 64%,#e3f0f8 100%); }
+@media(max-width:800px){
+  .fairytale-slipper { width:min(440px,116%); max-width:none; margin:-8px 0 -5px 50%; transform:translateX(-50%); }
+  .fairytale-carriage { max-width:none; width:min(520px,118%); margin:-15px 0 1px 50%; transform:translateX(-50%); }
+  .footer { background:linear-gradient(180deg,#103b78 0%,#23518a 28%,#b0d1ea 47%,#e3f0f8 62%); }
+}
+
+/* ===== Destellos de magia en sello de cera (SVG/CSS, liviano para móvil) ===== */
+.seal-sparkles { position:absolute; inset:0; z-index:4; pointer-events:none; }
+.seal-sparkle { position:absolute; left:var(--x); top:var(--y); width:var(--size); height:var(--size);
+  background:linear-gradient(135deg,#fff,#caeafb 48%,#fff); opacity:.3;
+  clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);
+  filter:drop-shadow(0 0 5px #fff);
+  transform:translate(-50%,-50%) scale(.6) rotate(0deg); transform-origin:center;
+  animation:seal-twinkle 3s ease-in-out infinite; animation-delay:var(--delay); will-change:transform,opacity;
+}
+.seal-aura { position:absolute; z-index:0; inset:3%; opacity:0; pointer-events:none; border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.65) 0%,rgba(185,223,255,.36) 35%,transparent 70%); transform:scale(.7); }
+@keyframes seal-twinkle {
+  0%,100% { opacity:.06; transform:translate(-50%,-50%) scale(.32) rotate(0deg); }
+  45% { opacity:.98; transform:translate(-50%,-50%) scale(1.12) rotate(45deg); }
+  70% { opacity:.42; transform:translate(-50%,-50%) scale(.62) rotate(70deg); }
+}
+@keyframes seal-sparkle-burst {
+  0% { opacity:.35; transform:translate(-50%,-50%) scale(.5) rotate(0); }
+  30% { opacity:1; transform:translate(-50%,-50%) scale(1.65) rotate(40deg); }
+  100% { opacity:0; transform:translate(calc(-50% + var(--bx)),calc(-50% + var(--by))) scale(.1) rotate(110deg); }
+}
+@keyframes seal-aura-flash {
+  0% { opacity:0; transform:scale(.7); }
+  37% { opacity:.93; transform:scale(1.15); }
+  100% { opacity:0; transform:scale(1.85); }
+}
+.opening.magic-opening .seal-sparkle { animation:seal-sparkle-burst .88s cubic-bezier(.16,.74,.24,1) both; animation-delay:0s; }
+.opening.magic-opening .seal-aura { animation:seal-aura-flash .85s ease-out both; }
+.opening.magic-opening .wax-seal-button { transform:rotate(-3deg) scale(1.07); filter:drop-shadow(0 0 21px rgba(214,244,255,.78)) drop-shadow(0 14px 14px rgba(1,13,38,.38)); }
+@media(prefers-reduced-motion:reduce){
+  .seal-sparkle { animation:none; opacity:.36; }
+  .opening.magic-opening .seal-sparkle,.opening.magic-opening .seal-aura { animation:none; }
+}

@@ -25,16 +25,25 @@ function startMusic() {
 }
 
 // La interacción de abrir habilita el audio en navegadores móviles.
+let invitationHasOpened = false;
 openButton.addEventListener('click', () => {
+  if (invitationHasOpened) return;
+  invitationHasOpened = true;
+  // Keep music.play() inside the user gesture for mobile Safari/Chrome.
   startMusic();
-  opening.classList.add('is-opening');
-  document.body.classList.remove('is-locked');
+  openButton.disabled = true;
+  opening.classList.add('magic-opening');
+  // The wax seal flashes with tiny stars, then the invitation unfolds.
   window.setTimeout(() => {
-    opening.setAttribute('aria-hidden', 'true');
-    opening.setAttribute('aria-modal', 'false');
-    const focusTarget = document.querySelector('.topbar-link');
-    if (focusTarget) focusTarget.focus({ preventScroll: true });
-  }, prefersReducedMotion ? 0 : 850);
+    opening.classList.add('is-opening');
+    document.body.classList.remove('is-locked');
+    window.setTimeout(() => {
+      opening.setAttribute('aria-hidden', 'true');
+      opening.setAttribute('aria-modal', 'false');
+      const focusTarget = document.querySelector('.topbar-link');
+      if (focusTarget) focusTarget.focus({ preventScroll: true });
+    }, prefersReducedMotion ? 0 : 850);
+  }, prefersReducedMotion ? 0 : 560);
 });
 
 musicToggle.addEventListener('click', () => {

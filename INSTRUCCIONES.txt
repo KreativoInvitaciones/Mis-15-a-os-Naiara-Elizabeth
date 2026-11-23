@@ -1,26 +1,19 @@
-INVITACIÓN DIGITAL DE NAIARA ELIZABETH - CAMBIOS DE CENICIENTA
+INVITACIÓN NAIARA ELIZABETH – DESTELLOS DE APERTURA Y CENICIENTA
 
-Fecha: 26 de diciembre de 2026.
+Archivos a subir a la RAÍZ del repositorio GitHub (no subir el ZIP sin extraer):
+- index.html
+- style.css
+- script.js
+- sello-lacre-naiara.webp
+- foto-naiara.jpg
+- Papel_Chic_mp3.mp3
+- zapatilla-cristal.webp
+- carroza-cenicienta.webp
 
-Esta versión parte del proyecto con sello de lacre azul, fotografía, música,
-cuenta regresiva, mapas y confirmación de asistencia por WhatsApp.
+Conservados: fecha 26 diciembre 2026, misa 1:00 p. m., recepción 3:00 p. m., ubicación de ambos lugares, formulario de confirmación a WhatsApp 4691429101, música y sello de cera.
 
-CAMBIOS REALIZADOS:
-- Confirmación: ahora dice "WhatsApp de la mamá de Naiara".
-- Número de WhatsApp conservado: 469 142 91 01 (+52 469 142 9101).
-- Junto a "Código de vestimenta": zapatilla de cristal decorativa.
-- Al final de la invitación: carroza de cuento de hadas.
-- Ambos adornos son vectores SVG incluidos dentro de index.html.
-- No se modifica la paleta de colores, el lacre ni el formulario.
+Novedad: el sello de cera muestra destellos suaves, y al tocarlo se dispersan antes de abrir. La zapatilla y carroza son recortes de la imagen previamente aprobada, no dibujos nuevos.
 
-PARA SUBIR A GITHUB:
-1. Abre tu repositorio Mis-15-a-os-Naiara-Elizabeth.
-2. Ve a Code > Add file > Upload files.
-3. Sube index.html, style.css, script.js, foto-naiara.jpg,
-   Papel_Chic_mp3.mp3 y sello-lacre-naiara.webp.
-4. Confirma con Commit changes.
-5. Abre GitHub Pages en tu celular y recarga la página.
+En GitHub: Add file > Upload files > seleccionar los 8 archivos > Commit changes. Si los archivos existen, GitHub debe mostrar que los reemplaza.
 
-Los botones de ubicación siguen enlazados a las rutas que se configuraron
-anteriormente; el usuario debe comprobar que llegan al acceso correcto.
-La confirmación abre WhatsApp con el mensaje listo; el invitado debe enviarlo.
+Las versiones PNG originales de las ilustraciones están disponibles como archivo separado para uso en otros materiales y NO hace falta subirlas al repositorio.
