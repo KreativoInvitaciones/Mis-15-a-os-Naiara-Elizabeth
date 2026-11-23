@@ -592,3 +592,21 @@ body { font-size:16px; }
 }
 /* En pantallas compactas, el título manuscrito no salta a dos líneas. */
 @media(max-width:359px) { .opening-xv { font-size:36px; white-space:nowrap; } }
+
+
+/* ===== Motivos de Cenicienta: cristal y carroza ilustrados en SVG, sin imágenes pesadas. ===== */
+.fairytale-decoration { position:relative; margin-inline:auto; width:100%; pointer-events:none; }
+.fairytale-decoration svg { display:block; width:100%; height:auto; overflow:visible; }
+.fairytale-slipper { width:min(300px,86%); margin-top:0; margin-bottom:1px; filter:drop-shadow(0 3px 8px rgba(179,226,250,.18)); }
+.detail-block-cinderella .detail-title { margin-top:0; }
+.detail-block-cinderella .detail-symbol { margin-bottom:12px; }
+.fairytale-carriage { max-width:360px; margin:0 auto 8px; filter:drop-shadow(0 5px 9px rgba(65,120,164,.12)); }
+.footer .fairytale-carriage + .overline { position:relative; z-index:1; }
+@media(max-width:800px) {
+  .fairytale-slipper { width:min(258px,84%); margin-block:-10px 1px; }
+  .fairytale-carriage { max-width:min(290px,88vw); margin:0 auto 13px; }
+}
+@media(max-width:359px) {
+  .fairytale-slipper { width:230px; }
+  .fairytale-carriage { max-width:255px; }
+}
